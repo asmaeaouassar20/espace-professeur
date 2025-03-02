@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row m-3 d-flex justify-content-center">
+        @if(mesEtudiants.length!=0){
+            @for (etud of mesEtudiants; track $index) {
+                <div class="card col-lg-3 col-md-4 col-sm-6 m-4" >
+                    <img [src]="etud.imageUrl" class="card-img-top mt-2" [alt]="etud.nom" >
+                    <div class="card-body">
+                      <h5 class="card-title">{{etud.prenom}} {{etud.nom}}</h5>
+                      <table class="table table-bordered">
+                       <tbody>
+                        <tr>
+                            <td>email</td>
+                            <td>{{etud.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>filière</td>
+                            <td>{{etud.filiere}}</td>
+                        </tr>
+                        <tr>
+                            <td>année d'étude</td>
+                            <td>{{etud.anneeEtude}}</td>
+                        </tr>
+                       </tbody> 
+                      </table>
+                    </div>
+                  </div>
+            }
+        }@else {
+            <p>No Student Yet</p>
+        }
+    </div>
+</div>

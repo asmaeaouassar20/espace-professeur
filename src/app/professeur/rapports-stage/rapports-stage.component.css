@@ -1,0 +1,39 @@
+.card{
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.11);;
+    transition: .20s ease-in;
+    position: relative;
+    padding: 8px;
+}
+
+.card .date-soumission{
+    position: absolute;
+    bottom : -10px;
+    right: 10px;
+}
+
+.card:hover{
+    transform: translateY(-7px);
+    border-color:#43A3DB;
+    box-shadow: 8px 8px 12px #00a2ff1d;
+
+}
+
+
+.icon-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.icon-container i{
+    font-size:18px;
+    color:#43A3DB;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin-bottom: 16px;
+}
+.icon-container i:hover{
+    color: #43A3DB;
+    transform: scale(1.4);
+}

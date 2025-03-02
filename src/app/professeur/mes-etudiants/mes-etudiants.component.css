@@ -1,0 +1,4 @@
+.card-img-top {
+    height: 200px;  /* Ajuste selon le besoin */
+    object-fit: cover; /* Recadre sans déformer */
+}
