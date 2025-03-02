@@ -16,7 +16,7 @@ export interface DepotRapportStage{
     id:number,
     titre:string,
     description:string,
-    etudiants:Student[],
+    etudiants:Student[], 
     evaluation:Evaluation | null,
     statut:StatutRapport,
     submissionDate:Date

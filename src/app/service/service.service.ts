@@ -114,5 +114,13 @@ export class ServiceService {
     return this.depotsRapports;
   }
 
+
+  getDepotById(id:number):DepotRapportStage | null{
+    for(let depot of this.depotsRapports){
+      if(depot.id==id) return depot;
+    }
+    return null;
+  }
+
   
 }

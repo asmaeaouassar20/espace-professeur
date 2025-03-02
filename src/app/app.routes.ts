@@ -6,7 +6,7 @@ import { MesEtudiantsComponent } from './professeur/mes-etudiants/mes-etudiants.
 
 export const routes: Routes = [
     {path:'',component:EspaceProfesseurComponent,pathMatch:'full'},
-    {path:'details-etudiant',component:DetailsEtudiantComponent},
+    {path:'details-etudiant/:id',component:DetailsEtudiantComponent},
     {path:'rapports-stage',component:RapportsStageComponent},
     {path:'mes-etudiants',component:MesEtudiantsComponent}
 
