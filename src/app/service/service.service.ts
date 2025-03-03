@@ -122,5 +122,16 @@ export class ServiceService {
     return null;
   }
 
+
+
+  setEvaluation(idDepotStage:number,evaluation:Evaluation){
+    for(let depot of this.depotsRapports){
+      if(depot.id===idDepotStage){
+        depot.evaluation=evaluation;
+        return;
+      }
+    }
+  }
+
   
 }

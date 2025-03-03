@@ -12,7 +12,11 @@
            <div class="icon-container">
              <i class="fa-solid fa-eye"></i>
              <i class="fa-solid fa-user" [routerLink]="['/details-etudiant',depotRapport.id]"></i>
-             <i class="fa-solid fa-comment" (click)="voirEvaluationOpenModal(depotRapport.id)"></i>
+             @if(depotRapport.evaluation==null || depotRapport.evaluation==undefined){
+              <i class="fa-solid fa-plus" (click)="openModalAddEval(depotRapport.id)"></i>
+             }@else {
+              <i class="fa-solid fa-comment" (click)="voirEvaluationOpenModal(depotRapport.id)"></i>
+             }
              <i class="fa-solid fa-download"></i>
            </div>
            <p class="card-text date-soumission mt-auto"><small class="text-muted">Date de soumission: {{depotRapport.submissionDate | date :'dd/MM/yyyy : hh:mm'}}</small></p>
@@ -30,7 +34,7 @@
 
 
 
-<div class="modal" tabindex="-1" #evaluationmodal>
+<div class="modal" tabindex="-1" #voirevaluationmodal>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,12 +60,34 @@
         }
       </div>
       <div class="modal-footer">
-        @if(evaluationDepotSelectionne === undefined || evaluationDepotSelectionne===null){
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Close</button>
-          <button type="button" class="btn btn-primary">Add Evaluation</button>
-        }@else {
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Close</button>
-        }
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Close</button>      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" #addevaluationmodal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Evaluation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModalAddEval()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formAddEvaluation">
+          <div class="m-3">
+            <input type="number" class="form-control" placeholder="Donnez une note" formControlName="note">
+          </div>
+          <div class="m-3">
+            <textarea class="form-control" placeholder="Donnez un commentaire ..." formControlName="comment"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModalAddEval()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveEvaluation()">Add</button>
       </div>
     </div>
   </div>
