@@ -1,3 +1,6 @@
+.container{
+    margin-left:255px ;
+}
 .card-img-top {
     height: 200px;  /* Ajuste selon le besoin */
     object-fit: cover; /* Recadre sans déformer */

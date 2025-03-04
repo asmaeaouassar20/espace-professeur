@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Student } from '../../model/model';
 import { ServiceService } from '../../service/service.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-espace-professeur',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './espace-professeur.component.html',
   styleUrl: './espace-professeur.component.css'
 })

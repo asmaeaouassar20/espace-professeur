@@ -10,6 +10,8 @@
     background-color: #CEDDDE;
     color: #43A3DB;
     padding: 20px;
+    position: fixed;
+    height: 100vh;
   }
   
   .sidebar-title {
@@ -45,4 +47,10 @@
   .nav-item .icon {
     margin-right: 10px;
     font-size: 1.2rem;
+  }
+
+
+  /* Pour le router-outlet*/
+  .content{
+    flex-grow: 1; /* Permetrre au contenu de router-oulet de prndre tout l'espace restant*/
   }

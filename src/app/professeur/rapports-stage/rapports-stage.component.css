@@ -1,3 +1,7 @@
+.container{
+    margin-left: 255px;
+}
+
 .card{
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.11);;
     transition: .20s ease-in;

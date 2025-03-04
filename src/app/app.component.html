@@ -1,6 +1,10 @@
 <div class="dashboard-container">
 <aside class="sidebar">
     <nav class="nav-links">
+      <a class="nav-item"  routerLink="/home">
+        <i class="icon">🏚️</i>
+        <span class="text">Acceuil</span>
+      </a>
       <a class="nav-item"  routerLink="/rapports-stage">
         <i class="icon">📄</i>
         <span class="text">Les rapports de stage</span>
@@ -11,6 +15,8 @@
       </a>
     </nav>
   </aside>
-<router-outlet></router-outlet>
 
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
 </div>

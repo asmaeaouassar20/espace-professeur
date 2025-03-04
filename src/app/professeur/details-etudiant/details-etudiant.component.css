@@ -1,3 +1,7 @@
+.container{
+    margin-left: 255px;
+}
+
 /* Style de la carte liée au dépot du rapport de stage */
 .card{
     transition: .20s ease-in;

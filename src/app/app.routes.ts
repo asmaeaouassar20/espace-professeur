@@ -5,7 +5,8 @@ import { EspaceProfesseurComponent } from './professeur/espace-professeur/espace
 import { MesEtudiantsComponent } from './professeur/mes-etudiants/mes-etudiants.component';
 
 export const routes: Routes = [
-    {path:'',component:EspaceProfesseurComponent,pathMatch:'full'},
+    {path:'',redirectTo:'/home',pathMatch:'full'},
+    {path:'home',component:EspaceProfesseurComponent},
     {path:'details-etudiant/:id',component:DetailsEtudiantComponent},
     {path:'rapports-stage',component:RapportsStageComponent},
     {path:'mes-etudiants',component:MesEtudiantsComponent}
