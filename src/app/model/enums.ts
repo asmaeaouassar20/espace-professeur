@@ -11,7 +11,8 @@ export enum AnneeEtude{
 
 export enum StatutRapport{
     V='Validé',
-    NV='Rejeté'
+    NV='Rejeté',
+    N='None'
 }
 
 

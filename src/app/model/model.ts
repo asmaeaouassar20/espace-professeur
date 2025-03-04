@@ -19,7 +19,8 @@ export interface DepotRapportStage{
     etudiants:Student[], 
     evaluation:Evaluation | null,
     statut:StatutRapport,
-    submissionDate:Date
+    submissionDate:Date,
+    selectedRadio?:string | null // C'est une propriété optionnelle
 }
 
 export interface Evaluation{

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DepotRapportStage, Evaluation, Student } from '../model/model';
 import { AnneeEtude, FiliereEtude, StatutRapport } from '../model/enums';
+import { stat } from 'fs';
 
 @Injectable({
   providedIn: 'root'
@@ -88,7 +89,7 @@ export class ServiceService {
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam nam corrupti, voluptatem quos tempore a iusto reprehenderit veniam voluptate!.",
     etudiants:[this.etudiant4],
     evaluation:null,
-    statut:StatutRapport.NV,
+    statut:StatutRapport.N,
     submissionDate:new Date(2024,8,25,12,45)
   }
 
@@ -133,5 +134,18 @@ export class ServiceService {
     }
   }
 
+
+ setStatutRapportById(id:number,statut:string):DepotRapportStage[]{
+  for(let depot of this.depotsRapports){
+    if(depot.id===id){
+      if(statut==='V'){
+        depot.statut=StatutRapport.V;
+      }else{
+        depot.statut=StatutRapport.NV;
+      }
+    }
+  }
+  return this.depotsRapports;
+ }
   
 }

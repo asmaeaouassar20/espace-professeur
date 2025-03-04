@@ -20,7 +20,29 @@
              <i class="fa-solid fa-download"></i>
            </div>
            <p class="card-text date-soumission mt-auto"><small class="text-muted">Date de soumission: {{depotRapport.submissionDate | date :'dd/MM/yyyy : hh:mm'}}</small></p>
-           <p>statut du rapport : <span [ngStyle]="{'backgroundColor' : getColorSelonStatut(depotRapport.statut)}" style="color: #fff;padding: 4px;" class="rounded">{{depotRapport.statut}}</span></p>
+       
+           @if (idDepotToEditStatut!==depotRapport.id) {
+            <p > <span [ngStyle]="{'backgroundColor' : getColorSelonStatut(depotRapport.statut)}" style="color: #fff;padding: 4px;" class="rounded">{{depotRapport.statut}}</span> <i class="fa-solid fa-pen m-3" (click)="editStatut(depotRapport.id,depotRapport.statut)"></i></p>
+           }@else {
+            <div class="my-3 radioEditStatut d-flex justify-content-start align-items-center">
+              <mat-radio-group aria-label="Select an option" [(ngModel)]="depotRapport.selectedRadio">
+                <mat-radio-button value="V" id="radioV">Validé</mat-radio-button>
+                <mat-radio-button value="NV" id="radioNV">Rejeté</mat-radio-button>
+              </mat-radio-group>
+              <div class="icons-radio">
+                @if (depotRapport.selectedRadio) {
+                  <i class="fa-solid fa-check fa-check-ok"  (click)="saveNewStatus(depotRapport)" ></i>
+                  <i class="fa-solid fa-trash fa-trash-ok" (click)="resetRadioCheck(depotRapport)"></i>
+                }@else{
+                  <i class="fa-solid fa-check " id="disabled-check"></i>
+                  <i class="fa-solid fa-trash"  id="disabled-trash"></i>
+                }
+                
+                <i class="fa-solid fa-xmark" (click)="idDepotToEditStatut=-1"></i>
+              </div>
+             </div>
+           }
+           
          </div>
        </div>
      </div>
