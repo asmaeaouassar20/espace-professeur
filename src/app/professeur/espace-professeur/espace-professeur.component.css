@@ -10,15 +10,23 @@
     position: relative;
   }
   
-  .search-container {
-    display: flex;
+  .search-container{
+    width: 950px;
+
+    input{
+      width: 90%;
+    }
+    button{
+      width: 10%;
+    }
   }
-  
+
   .search-input {
-    padding: 8px;
+    padding: 15px;
     width: 300px;
-    border: 1px solid #bdc3c7;
+    border: 1px solid #bdc3c7b0;
     border-radius: 4px 0 0 4px;
+    outline:none;
   }
   
   .search-btn {
@@ -28,6 +36,7 @@
     color: white;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
+    font-size: 25px;
   }
   
   .user-profile {
@@ -118,28 +127,12 @@
  
   .welcome-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #c7dfe6;
-    padding: 20px;
-    border-radius: 8px;
-    color: black;
   }
  
   
-  .add-stage-btn {
-    padding: 10px 20px;
-    background-color: #43A3DB;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-  }
   
-  .add-stage-btn:hover {
-    background-color: #9CD2D5;
-  }
 
 
   td{

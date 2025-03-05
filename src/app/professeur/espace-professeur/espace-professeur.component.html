@@ -1,9 +1,6 @@
 <div class="dashboard-container">
-  <header class="top-bar">
-    <div class="search-container">
-      <input type="text" placeholder="Search for datas & reports..." class="search-input">
-      <button class="search-btn">🔍</button>
-    </div>
+  <header class="top-bar d-flex justify-content-end align-items-center">
+    
     <div class="user-profile" (click)="toggleDropdown()">
       <span class="user-name">Salim Alioua</span>
       <div class="user-avatar">👤</div>
@@ -30,8 +27,10 @@
   </header>
 
   <section class="welcome-section">
-    <div class="welcome-message">Hi Salim ! Welcome Back</div>
-    <button class="add-stage-btn">+ AJOUTER UN Etudiant</button>
+    <div class="search-container d-flex justify-content-center align-items-center">
+      <input type="text"  placeholder="Search for datas & reports..." class="search-input">
+      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
   </section>
 
 
