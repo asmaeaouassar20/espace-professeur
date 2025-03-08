@@ -115,10 +115,15 @@ export class RapportsStageComponent implements OnInit{
       note: Number(this.formAddEvaluation.value.note) ?? 0 ,
       comment:this.formAddEvaluation.value.comment ?? ''
     }
-
-    this.service.setEvaluation(this.idDepotRapStageToEvaluate,newEvaluation);
+    const isEvalAdded=this.service.setEvaluation(this.idDepotRapStageToEvaluate,newEvaluation);
+    if(!isEvalAdded){
+      this.snackbar.open("la note de validation est 12",'erreur',{duration:5000});
+      return;
+    }
     this.closeModalAddEval();
     this.snackbar.open("L'évaluation du rapport est ajouté avec succès","Close",{duration:5000});
+    this.listDepotsRapport=this.service.getRapports();
+   
   }
 
   resetRadioCheck(depotRapport:DepotRapportStage){
@@ -128,16 +133,32 @@ export class RapportsStageComponent implements OnInit{
 
   editStatut(id:number,statut:StatutRapport){
     this.idDepotToEditStatut=id;
-    
+    this.fetchRappStageAddSelectedProp();
   }
 
   saveNewStatus(depot:DepotRapportStage){
     if(depot.selectedRadio!=null && depot.selectedRadio!=undefined){
-      this.listDepotsRapport=this.service.setStatutRapportById(depot.id,depot.selectedRadio);
+      const depotFromService=this.service.getDepotById(depot.id);
+      if(depotFromService?.evaluation==null){
+        this.openModalAddEval(depot.id);
+      }else{
+        const note=depotFromService.evaluation.note;
+        if(note>=12){
+          if(depot.selectedRadio=='NV'){
+            this.snackbar.open("vous avez déjà donné une note supérieure à 12",'erreur',{duration:5000});
+            return ;
+          }
+        }else{
+          if(depot.selectedRadio=='V'){
+            this.snackbar.open("vous avez déjà donné une note inférieure à 12",'erreur',{duration:5000});
+            return ;
+          }
+        }
+      }
+      this.listDepotsRapport=this.service.setStatutRapportById(depot.id,depot.selectedRadio); 
       this.idDepotToEditStatut=-1;
       this.fetchRappStageAddSelectedProp();
     }
-   
   }
   
 

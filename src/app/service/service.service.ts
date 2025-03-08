@@ -125,14 +125,19 @@ export class ServiceService {
 
 
 
-  setEvaluation(idDepotStage:number,evaluation:Evaluation){
+  setEvaluation(idDepotStage:number,evaluation:Evaluation):boolean{
     for(let depot of this.depotsRapports){
       if(depot.id===idDepotStage){
-        depot.evaluation=evaluation;
-        return;
+          if((depot.statut==StatutRapport.V && evaluation.note<12) || (depot.statut==StatutRapport.NV && evaluation.note>=12)){
+            return false;
+          }
+          depot.evaluation=evaluation;
+          return true;
+        }
       }
+      return false;
     }
-  }
+
 
 
  setStatutRapportById(id:number,statut:string):DepotRapportStage[]{
