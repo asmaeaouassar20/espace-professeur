@@ -38,3 +38,18 @@
     transition: opacity 1s ease;
     cursor: pointer;
   }
+
+.card-student-bottom{
+   display: flex;
+   justify-content: end;
+   align-items: center;
+}
+.card-student-bottom .fa-trash{
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.card-student-bottom .fa-trash:hover{
+    transform: scale(1.2);
+}

@@ -1,32 +1,6 @@
 <div class="dashboard-container">
-  <header class="top-bar d-flex justify-content-end align-items-center">
-    
-    <div class="user-profile" (click)="toggleDropdown()">
-      <span class="user-name">Salim Alioua</span>
-      <div class="user-avatar">👤</div>
-    </div>
-    <div class="dropdown-menu" [class.show]="isDropdownOpen">
-      <div class="dropdown-header">
-        <div class="user-avatar-large">👤</div>
-        <div class="user-info">Salim Alioua</div>
-        <div class="user-email">salim.aliouauit.ac.ma</div>
-      </div>
-      <div class="dropdown-item">
-        <i class="icon">📷</i>
-        <span>Modifier la photo</span>
-      </div>
-      <div class="dropdown-item">
-        <i class="icon">🔒</i>
-        <span>Changer le mot de passe</span>
-      </div>
-      <div class="dropdown-item">
-        <i class="icon">🚪</i>
-        <span>Déconnexion</span>
-      </div>
-    </div>
-  </header>
 
-  <section class="welcome-section">
+  <section class="welcome-section mt-5">
     <div class="search-container d-flex justify-content-center align-items-center">
       <input type="text"  placeholder="Search for datas & reports..." class="search-input">
       <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
