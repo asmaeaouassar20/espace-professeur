@@ -45,7 +45,7 @@
    align-items: center;
 }
 .card-student-bottom .fa-trash{
-    color: red;
+    color: rgb(245, 19, 19);
     font-size: 18px;
     cursor: pointer;
     transition: all .5s ease;

@@ -1,7 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../../service/service.service';
-import { DepotRapportStage, Student } from '../../model/model';
+import { DepotRapportStage, Evaluation, Student } from '../../model/model';
 import { DatePipe, NgStyle } from '@angular/common';
 import { StatutRapport } from '../../model/enums';
 
@@ -14,6 +14,9 @@ import { StatutRapport } from '../../model/enums';
 export class DetailsEtudiantComponent implements OnInit{
 
   idDepotRapoortStageSelectionne!:string;
+  evaluationOfDepotSelectionne:Evaluation|null=null;
+
+  @ViewChild('voirevaluation') voirevaluationmodal:ElementRef | undefined;
 
   route=inject(ActivatedRoute);
   service=inject(ServiceService);
@@ -21,16 +24,17 @@ export class DetailsEtudiantComponent implements OnInit{
   depotRapportStageSelectionne!:DepotRapportStage | null;
   etudiants:Student[] | undefined=[];
 
+
   ngOnInit(): void {
       this.idDepotRapoortStageSelectionne=this.route.snapshot.paramMap.get('id')!;
-      console.log('id de dépot de rapport de stage selectionné est : '+this.idDepotRapoortStageSelectionne);
 
       // Récupérer de dépot du rapport de stage par son id
      this.depotRapportStageSelectionne=this.service.getDepotById(Number(this.idDepotRapoortStageSelectionne)) ;
-      console.log(this.depotRapportStageSelectionne?.statut)
 
       // Récupérer les étuidants qui ont fait ce stage
       this.etudiants=this.depotRapportStageSelectionne?.etudiants;
+      const idDepot=Number(this.idDepotRapoortStageSelectionne);
+      this.evaluationOfDepotSelectionne=this.service.getEvaluationByIdRapportStage(idDepot);
   }
 
 
@@ -42,6 +46,18 @@ export class DetailsEtudiantComponent implements OnInit{
         return 'rgb(255, 70, 70)';
       default:
         return 'grey';
+    }
+  }
+
+
+  voirEvaluation(){
+    if(this.voirevaluationmodal){
+      this.voirevaluationmodal.nativeElement.style.display='block';
+    }
+  }
+  closeModalShowEval(){
+    if(this.voirevaluationmodal){
+      this.voirevaluationmodal.nativeElement.style.display='none';
     }
   }
 

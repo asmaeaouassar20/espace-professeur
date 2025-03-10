@@ -152,5 +152,14 @@ export class ServiceService {
   }
   return this.depotsRapports;
  }
+
+ getEvaluationByIdRapportStage(idDepot:number):Evaluation | null{
+  for(let depot of this.depotsRapports){
+    if(depot.id===idDepot){
+      return depot.evaluation;
+    }
+  }
+  return null;
+ }
   
 }

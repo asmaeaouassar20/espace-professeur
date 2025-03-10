@@ -22,6 +22,7 @@
     position: absolute;
     top: 45px;
     right: 0;
+    padding: 8px;
 }
 
 .icon-container i{
@@ -58,4 +59,12 @@
 
 .studentsDep .card-body{
     width: 50%;
+}
+ 
+.description{
+    margin: 30px 0 80px 0;
+    box-shadow: 2px 2px 18px rgba(128, 128, 128, 0.292);
+}
+.statutRapport span{
+    font-weight: 500;
 }
