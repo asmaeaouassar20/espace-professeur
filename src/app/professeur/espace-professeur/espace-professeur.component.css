@@ -188,3 +188,29 @@
   transform: translateY(0) rotate(0deg);
  }
 }
+
+
+
+/* Add Student */
+.add-student i{
+  font-size: 40px;
+}
+.add-student-btn{
+  width: 85px;
+  padding: 18px;
+  margin-left: 45px;
+  position: relative;
+}
+.add-student-btn:hover .text-add-stud-btn{
+  opacity: 1;
+}
+.text-add-stud-btn{
+  position: absolute ;
+  background-color:#5491c0;
+  width: 220px;
+  padding: 15px 0 0px 8px;
+  opacity: 0;
+  border-radius: 18px;
+  transition: opacity 1s ease;
+  cursor: pointer;
+}
