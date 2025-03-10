@@ -27,7 +27,7 @@ export class DetailsEtudiantComponent implements OnInit{
 
       // Récupérer de dépot du rapport de stage par son id
      this.depotRapportStageSelectionne=this.service.getDepotById(Number(this.idDepotRapoortStageSelectionne)) ;
-      console.log(this.depotRapportStageSelectionne)
+      console.log(this.depotRapportStageSelectionne?.statut)
 
       // Récupérer les étuidants qui ont fait ce stage
       this.etudiants=this.depotRapportStageSelectionne?.etudiants;
@@ -41,7 +41,7 @@ export class DetailsEtudiantComponent implements OnInit{
       case StatutRapport.NV:
         return 'rgb(255, 70, 70)';
       default:
-        return 'rgb(255, 70, 70)';
+        return 'grey';
     }
   }
 
