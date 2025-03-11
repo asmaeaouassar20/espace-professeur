@@ -1,22 +1,11 @@
-<div class="dashboard-container">
-<aside class="sidebar">
-    <nav class="nav-links">
-      <a class="nav-item"  routerLink="/home">
-        <i class="icon">🏚️</i>
-        <span class="text">Acceuil</span>
-      </a>
-      <a class="nav-item"  routerLink="/rapports-stage">
-        <i class="icon">📄</i>
-        <span class="text">Les rapports de stage</span>
-      </a>
-      <a class="nav-item" routerLink="/mes-etudiants">
-        <i class="icon">🧑🏼‍💻</i>
-        <span class="text" >Etudiants</span>
-      </a>
-    </nav>
-  </aside>
-
-<main class="content">
+<div class="container">
+  <div class="menu">
+    <ul>
+      <li class="li-rapports">A</li>
+      <li class="li-home">H</li>
+      <li class="li-students">C</li>
+    </ul>
+  </div>
   <router-outlet></router-outlet>
-</main>
+
 </div>

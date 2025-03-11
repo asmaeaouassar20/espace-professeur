@@ -161,5 +161,19 @@ export class ServiceService {
   }
   return null;
  }
+
+deleteStudentById(id:number):boolean{
+  for(let i=0;i<this.etudiants.length;i++){
+    if(this.etudiants[i].id==id){
+      this.etudiants.splice(i,1);
+      return true;
+    }
+  }
+  return false;
+}
+
+addStudent(Student:Student){
+  this.etudiants.push(Student);
+}
   
 }

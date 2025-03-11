@@ -1,6 +1,4 @@
-.container{
-    margin-left:255px ;
-}
+
 .card-img-top {
     height: 200px;  /* Ajuste selon le besoin */
     object-fit: cover; /* Recadre sans déformer */
@@ -52,4 +50,10 @@
 }
 .card-student-bottom .fa-trash:hover{
     transform: scale(1.2);
+}
+
+.msg-no-student{
+  text-align: center;
+  margin: 50px auto;
+  font-size: 22px;
 }

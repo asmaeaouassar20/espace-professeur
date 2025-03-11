@@ -13,4 +13,13 @@ export class MesEtudiantsComponent {
   constructor(private service:ServiceService){
     this.mesEtudiants=service.getStudents();
   }
+
+  deleteStudent(id:number){
+    const response=confirm("êtes vous sûr de supprimer cet étudiant §")
+    if(response){
+      this.service.deleteStudentById(id);
+      this.mesEtudiants=this.service.getStudents();
+    }
+  }
+
 }

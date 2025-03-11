@@ -3,7 +3,7 @@ import { AnneeEtude} from "./enums"
 import { StatutRapport } from "./enums"
 
 export interface Student{
-    id:number,
+    id:number, 
     nom:string,
     prenom:string,
     email:string,

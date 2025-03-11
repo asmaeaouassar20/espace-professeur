@@ -1,5 +1,5 @@
 export enum FiliereEtude{
-    INFO='Informatique',
+    INFO='Informatique', 
     INDUS='Industriel',
     SE='Systèmes Embarqués'
 }
@@ -9,7 +9,7 @@ export enum AnneeEtude{
     C='Troisième année'
 }
 
-export enum StatutRapport{
+export enum StatutRapport{ 
     V='Validé',
     NV='Rejeté',
     N='None'
