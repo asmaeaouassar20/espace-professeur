@@ -15,5 +15,11 @@ export enum StatutRapport{
     N='None'
 }
 
+export enum TypeStage{
+    INITIATION='Initiation',
+    PFA='PFA',
+    PFE='PFE'
+}
+
 
 

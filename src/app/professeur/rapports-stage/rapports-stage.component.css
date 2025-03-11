@@ -113,3 +113,27 @@ i{
 #disabled-trash:hover{
     transform: scale(1);
 }
+
+
+
+.top-btns{
+    display: flex;
+    justify-content: center;
+}
+.top-btns button {
+    background-color: rgb(218, 231, 234) ;   
+}
+.div-rech-par{
+    position: relative;
+}
+.input-search{
+    position: absolute;
+    top:-3px;
+    opacity: 0;
+    transition: all .5s ease;
+    cursor: pointer;
+    outline: none;
+}
+.div-rech-par:hover .input-search{
+    opacity: 1;
+}
