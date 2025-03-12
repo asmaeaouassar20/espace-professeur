@@ -1,9 +1,21 @@
 <div class="container">
   <div class="menu">
     <ul>
-      <li class="li-rapports">A</li>
-      <li class="li-home">H</li>
-      <li class="li-students">C</li>
+      <li class="li-rapports" routerLink="/rapports-stage">
+        <i class="fa-solid fa-file-lines">
+          <p class="icone-desc">Rapports de stage</p>
+        </i>
+      </li>
+      <li class="li-home">
+        <i class="fa-solid fa-house" routerLink="/home">
+          <p class="icone-desc">Accueil</p>
+        </i>
+      </li>
+      <li class="li-students">
+        <i class="fa-solid fa-user" routerLink="/mes-etudiants">
+          <p class="icone-desc">Mes étudiants</p>
+        </i>
+      </li>
     </ul>
   </div>
   <router-outlet></router-outlet>
