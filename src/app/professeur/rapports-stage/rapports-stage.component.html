@@ -6,12 +6,20 @@
     </div>
     <div class="choice-type-stage">
       <button class="btn btn-sm mx-3 px-4">Choisir le type de stage</button>
-      <select class="select-input">
-        <option value="initiation">Stage d'initiation</option>
-        <option value="pfa">Stage PFA</option>
-        <option value="pfe">Stage PFE</option>
-      </select>
-    </div>
+      <!-- <select class="select-input">
+        <option value="initiation"></option>
+        <option value="pfa"></option>
+        <option value="pfe"></option>
+      </select> -->
+        <button class="btn btn-secondary dropdown-toggle select-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Type du Stage
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" value="">Stage d'initiation</a></li>
+          <li><a class="dropdown-item" value="">Stage PFA</a></li>
+          <li><a class="dropdown-item" value="">Stage PFE</a></li>
+        </ul>
+    </div> 
   </div>
   <div class="row m-5"> 
     @if(listDepotsRapport.length!=0){

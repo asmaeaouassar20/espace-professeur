@@ -1,5 +1,5 @@
 
-.card{
+.card{ 
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.11);;
     transition: .20s ease-in;
     position: relative;
@@ -136,15 +136,15 @@ i{
 }
 .choice-type-stage{
     position: relative;
-    background-color: red;
 }
 .select-input{
     position: absolute;
-    background-color: greenyellow;
     left:10px;
     opacity:0;
     cursor: pointer;
     transition: all .5s ease;
+    left:15px;
+    width: 195px;
 }
 .choice-type-stage button{
     cursor: pointer;
