@@ -1,4 +1,4 @@
-import { DatePipe, NgClass, NgStyle } from '@angular/common';
+import { DatePipe, NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component ,ElementRef,inject,OnInit,ViewChild} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DepotRapportStage, Evaluation } from '../../model/model';
@@ -8,6 +8,8 @@ import { FormGroup,FormControl,ReactiveFormsModule, FormsModule } from '@angular
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatRadioModule} from '@angular/material/radio';
 
+import {TypeStage} from '../../model/enums';
+
 @Component({
   selector: 'app-rapports-stage',
   imports: [RouterLink,
@@ -15,11 +17,19 @@ import {MatRadioModule} from '@angular/material/radio';
     NgStyle,
     ReactiveFormsModule,
     MatRadioModule,
-    FormsModule],
+    FormsModule,
+    NgFor],
   templateUrl: './rapports-stage.component.html',
   styleUrl: './rapports-stage.component.css'
 })
 export class RapportsStageComponent implements OnInit{
+
+  // **** Types de stage *****
+  // Convertir l'énumération en tableau
+  typesStage=Object.values(TypeStage); 
+
+  // Variable pour stocker la valeur sélectionnée
+  typeStageSelectionne:TypeStage | undefined;
 
   listDepotsRapport:DepotRapportStage[]=[];
 
@@ -159,6 +169,10 @@ export class RapportsStageComponent implements OnInit{
       this.idDepotToEditStatut=-1;
       this.fetchRappStageAddSelectedProp();
     }
+  }
+
+  selectTypeStage(typeStage:TypeStage){
+    console.log(typeStage);
   }
   
 

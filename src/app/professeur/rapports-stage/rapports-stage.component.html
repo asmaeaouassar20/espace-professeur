@@ -15,9 +15,7 @@
           Type du Stage
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" value="">Stage d'initiation</a></li>
-          <li><a class="dropdown-item" value="">Stage PFA</a></li>
-          <li><a class="dropdown-item" value="">Stage PFE</a></li>
+          <li *ngFor="let typeStage of typesStage"><a class="dropdown-item" (click)="selectTypeStage(typeStage)">{{typeStage}}</a></li>
         </ul>
     </div> 
   </div>
