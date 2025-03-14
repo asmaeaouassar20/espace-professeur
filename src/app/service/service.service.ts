@@ -18,7 +18,7 @@ export class ServiceService {
     email:'Asmae@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/Asmae.jpg"
+    imageUrl:"/img/1.png"
   }
   etudiant2:Student={
     id:2,
@@ -27,7 +27,7 @@ export class ServiceService {
     email:'Meriem@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/Meriem.jpg"
+    imageUrl:"/img/2.png"
   }
   etudiant3:Student={
     id:3,
@@ -36,7 +36,7 @@ export class ServiceService {
     email:'Ilham@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/Ilham.jpg"
+    imageUrl:"/img/5.png"
   }
   etudiant4:Student={
     id:4,
@@ -45,7 +45,7 @@ export class ServiceService {
     email:'Mouad@gmail.com',
     filiere:FiliereEtude.INDUS,
     anneeEtude:AnneeEtude.A,
-    imageUrl:"/img/Mouad.jpg"
+    imageUrl:"/img/6.png"
   }
 
 

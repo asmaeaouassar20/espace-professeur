@@ -44,7 +44,7 @@
     <div class="row">
       @for (student of listEtudiantsEncadre; track $index) {
         <div class="col-2 photo-container  d-flex justify-content-center align-item-center m-5 py-5">
-          <img [src]="student.imageUrl" class="card-img-top rounded-circle">
+          <img [src]="student.imageUrl" class="card-img-top rounded-circle" loading="lazy">
           <div class="card-overlay">
             <div class="card p-3">
               <h5 class="card-title text-center">{{student.prenom}} {{student.nom}}</h5>

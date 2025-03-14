@@ -172,7 +172,8 @@ export class RapportsStageComponent implements OnInit{
   }
 
   selectTypeStage(typeStage:TypeStage){
-    console.log(typeStage);
+    this.typeStageSelectionne=typeStage;
+    console.log(this.typeStageSelectionne);
   }
   
 
