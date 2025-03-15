@@ -13,39 +13,66 @@ export class ServiceService {
 
   etudiant1:Student={
     id:1,
-    nom:'Aouassar',
-    prenom:'Asmae',
-    email:'Asmae@gmail.com',
+    nom:'Aouassar1',
+    prenom:'Asmae1',
+    email:'Asmae1@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/1.png"
+    imageUrl:"/img/asmae1.png"
   }
   etudiant2:Student={
     id:2,
-    nom:'El Fertas',
-    prenom:'Meriem',
-    email:'Meriem@gmail.com',
+    nom:'Aouassar2',
+    prenom:'Asmae2',
+    email:'Asmae2@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/2.png"
+    imageUrl:"/img/asmae2.png"
   }
   etudiant3:Student={
     id:3,
-    nom:'Boumlal',
-    prenom:'Ilham',
-    email:'Ilham@gmail.com',
-    filiere:FiliereEtude.INFO,
-    anneeEtude:AnneeEtude.B,
-    imageUrl:"/img/5.png"
+    nom:'Aouassar3',
+    prenom:'Asmae3',
+    email:'Asmae3@gmail.com',
+    filiere:FiliereEtude.SE,
+    anneeEtude:AnneeEtude.C,
+    imageUrl:"/img/asmae3.png"
   }
   etudiant4:Student={
     id:4,
-    nom:'Taoussi',
-    prenom:'Mouad',
-    email:'Mouad@gmail.com',
+    nom:'Aouassar4',
+    prenom:'Asmae4',
+    email:'Asmae4@gmail.com',
     filiere:FiliereEtude.INDUS,
     anneeEtude:AnneeEtude.A,
-    imageUrl:"/img/6.png"
+    imageUrl:"/img/asmae4.png"
+  }
+  etudiant5:Student={
+    id:5,
+    nom:'Aoussar5',
+    prenom:'Asmae5',
+    email:'Asmae5@gmail.com',
+    filiere:FiliereEtude.SE,
+    anneeEtude:AnneeEtude.B,
+    imageUrl:"/img/asmae5.png"
+  }
+  etudiant6:Student={
+    id:6,
+    nom:'Aoussar6',
+    prenom:'Asmae6',
+    email:'Asmae6@gmail.com',
+    filiere:FiliereEtude.INDUS,
+    anneeEtude:AnneeEtude.A,
+    imageUrl:"/img/asmae6.png"
+  }
+  etudiant7:Student={
+    id:7,
+    nom:'Aoussar7',
+    prenom:'Asmae7',
+    email:'Asmae7@gmail.com',
+    filiere:FiliereEtude.INDUS,
+    anneeEtude:AnneeEtude.C,
+    imageUrl:"/img/asmae7.png"
   }
 
 
@@ -60,8 +87,17 @@ export class ServiceService {
     note:18,
     comment:'travail terminé avec succès'
   }
+  evaluation3:Evaluation={
+    id:3,
+    note:13.5,
+    comment:'Bon travail mais il faut plus d\'efforts au niveau de la rédaction du rapport'
+  }
 
-
+  evaluation4:Evaluation={
+    id:4,
+    note:10,
+    comment:'travail non satisfaisant, il faut avoir une analyse complète et une étude détaillée avec plus d\'interprétaions avant de passer au tableau de bord'
+  }
 
   // *****  Rapports ******
   depotsRapports:DepotRapportStage[]=[];
@@ -92,7 +128,25 @@ export class ServiceService {
     statut:StatutRapport.N,
     submissionDate:new Date(2024,8,25,12,45)
   }
+  depotRapport4:DepotRapportStage={
+    id:4,
+    titre:"Réalisation d'un site e-comm pour une coopérative Tanger",
+    description:"Lorem ipsum dolor  amet consectetur adipisicing elit.   nam corrupti, voluptatem quos tempore a iusto reprehenderit veniam voluptate!.",
+    etudiants:[this.etudiant6],
+    evaluation:this.evaluation3,
+    statut:StatutRapport.V,
+    submissionDate:new Date(2025,1,5,15,40)
+  }
 
+  depotRapport5:DepotRapportStage={
+    id:5,
+    titre:"Réalisation du tableau de bord",
+    description:" nam corrupti, volu reprehenderit veniam voluptate. consectetur adipis",
+    etudiants:[this.etudiant7],
+    evaluation:this.evaluation4,
+    statut:StatutRapport.NV,
+    submissionDate:new Date(2025,3,14,21,5)
+  }
 
 
   constructor() { 
@@ -100,10 +154,15 @@ export class ServiceService {
     this.etudiants.push(this.etudiant2);
     this.etudiants.push(this.etudiant3);
     this.etudiants.push(this.etudiant4);
+    this.etudiants.push(this.etudiant5);
+    this.etudiants.push(this.etudiant6);
+    this.etudiants.push(this.etudiant7);
 
     this.depotsRapports.push(this.depotRapport1);
     this.depotsRapports.push(this.depotRapport2);
     this.depotsRapports.push(this.depotRapport3);
+    this.depotsRapports.push(this.depotRapport4);
+    this.depotsRapports.push(this.depotRapport5);
   }
 
 
