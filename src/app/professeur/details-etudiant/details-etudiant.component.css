@@ -65,3 +65,14 @@
 .statutRapport span{
     font-weight: 500;
 }
+
+
+@media (max-width:433px){
+    .description{
+        padding-bottom: 10px;
+    }
+    .statutRapport{
+        position: absolute;
+        bottom: 18px;
+    }    
+}
