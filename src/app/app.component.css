@@ -77,9 +77,20 @@
 
 
 
-@media (min-width:1270px){
+@media (min-width:1000px){
   .menu ul i{
     font-size: 65px;
+    color: #7497d2;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+}
+@media (max-width:960px){
+  .container{
+    margin-left:100px ;
+  }
+  .menu ul i{
+    font-size: 80px;
     color: #7497d2;
     cursor: pointer;
     transition: all .5s ease;

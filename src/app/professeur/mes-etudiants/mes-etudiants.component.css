@@ -57,3 +57,10 @@
   margin: 50px auto;
   font-size: 22px;
 }
+
+
+@media (max-width:413px){
+  .container{
+    margin-left:100px ;
+  }
+}
