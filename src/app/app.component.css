@@ -6,6 +6,7 @@
   position: fixed;
   left: -25px;
   top:40%;
+  z-index: 1000;
 }
 .menu ul i{
   font-size: 35px;
@@ -74,3 +75,13 @@
 
 
 
+
+
+@media (min-width:1270px){
+  .menu ul i{
+    font-size: 65px;
+    color: #7497d2;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+}
