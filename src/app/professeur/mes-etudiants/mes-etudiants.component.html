@@ -1,11 +1,10 @@
 <div class="container ">
-    <div class="add-student my-5">
+    <!-- <div class="add-student my-5">
         <div class="add-student-btn">
          <div class="text-add-stud-btn"> <p class="text-light">Ajouter un nouveau étudiant</p></div>
           <i class="fa-solid fa-user-plus" style="color: #5491c0;"></i>
         </div>
-       
-      </div>
+      </div> -->
     <div class="row m-3 d-flex justify-content-center">
         @if(mesEtudiants.length!=0){
             @for (etud of mesEtudiants; track $index) {
@@ -46,35 +45,3 @@
 
 
 
-<!-- <div class="modal" tabindex="-1" #ajouteretudiant>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Ajouter un nouveau étudiant</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModalAddEval()"></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="newStudent">
-            <div class="m-3">
-              <input type="number" class="form-control" placeholder="entrez le nom de l'étudiant" formControlName="note">
-            </div>
-            <div class="m-3">
-              <textarea class="form-control" placeholder="entrez le prenom de l'étudiant" formControlName="comment"></textarea>
-            </div>
-            <div class="m-3">
-                <input type="email" class="form-control" placeholder="entrez l'email de l'étudiant" formControlName="note">
-            </div>
-            <div class="m-3">
-                <select>
-                    <option></option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModalAddEval()">Close</button>
-            <button type="button" class="btn btn-primary" (click)="saveEvaluation()">Add</button>
-        </div>
-      </div>
-    </div>
-  </div> -->

@@ -7,7 +7,7 @@
 
 
 
-/* Add Student */
+/* Add Student 
 .add-student i{
     font-size: 40px;
   }
@@ -35,7 +35,7 @@
     border-radius: 18px;
     transition: opacity 1s ease;
     cursor: pointer;
-  }
+  }*/
 
 .card-student-bottom{
    display: flex;
