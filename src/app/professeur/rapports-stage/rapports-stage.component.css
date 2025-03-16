@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 .card{ 
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.11);;
@@ -10,6 +11,16 @@
     position: absolute;
     bottom : -10px;
     right: 10px;
+}
+.card .typeStage{
+    position: absolute;
+    bottom : -10px;
+    left:  20px;
+    font-family: "Bungee Shade", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(42, 42, 189);
+    
 }
 
 .card:hover{

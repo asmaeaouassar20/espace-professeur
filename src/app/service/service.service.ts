@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DepotRapportStage, Evaluation, Student } from '../model/model';
-import { AnneeEtude, FiliereEtude, StatutRapport } from '../model/enums';
+import { AnneeEtude, FiliereEtude, StatutRapport, TypeStage } from '../model/enums';
 import { stat } from 'fs';
 
 @Injectable({
@@ -108,7 +108,8 @@ export class ServiceService {
     etudiants:[this.etudiant1,this.etudiant2],
     evaluation:this.evaluation1,
     statut:StatutRapport.V,
-    submissionDate:new Date(2024,5,3,14,30)
+    submissionDate:new Date(2024,5,3,14,30),
+    typeStage:TypeStage.PFA
   }
   depotRapport2:DepotRapportStage={
     id:2,
@@ -117,7 +118,8 @@ export class ServiceService {
     etudiants:[this.etudiant3],
     evaluation:this.evaluation2,
     statut:StatutRapport.V,
-    submissionDate:new Date(2025,0,2,10,5)
+    submissionDate:new Date(2025,0,2,10,5),
+    typeStage:TypeStage.PFE
   }
   depotRapport3:DepotRapportStage={
     id:3,
@@ -126,7 +128,8 @@ export class ServiceService {
     etudiants:[this.etudiant4],
     evaluation:null,
     statut:StatutRapport.N,
-    submissionDate:new Date(2024,8,25,12,45)
+    submissionDate:new Date(2024,8,25,12,45),
+    typeStage:TypeStage.INITIATION
   }
   depotRapport4:DepotRapportStage={
     id:4,
@@ -135,7 +138,8 @@ export class ServiceService {
     etudiants:[this.etudiant6],
     evaluation:this.evaluation3,
     statut:StatutRapport.V,
-    submissionDate:new Date(2025,1,5,15,40)
+    submissionDate:new Date(2025,1,5,15,40),
+    typeStage:TypeStage.PFE
   }
 
   depotRapport5:DepotRapportStage={
@@ -145,7 +149,8 @@ export class ServiceService {
     etudiants:[this.etudiant7],
     evaluation:this.evaluation4,
     statut:StatutRapport.NV,
-    submissionDate:new Date(2025,3,14,21,5)
+    submissionDate:new Date(2025,3,14,21,5),
+    typeStage:TypeStage.PFA
   }
 
 

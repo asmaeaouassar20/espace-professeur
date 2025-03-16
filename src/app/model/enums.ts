@@ -16,10 +16,10 @@ export enum StatutRapport{
 }
 
 export enum TypeStage{
-    INITIATION='Initiation',
+    INITIATION='Init',
     PFA='PFA',
     PFE='PFE'
 }
 
 
-
+ 

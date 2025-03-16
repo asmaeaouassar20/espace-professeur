@@ -1,4 +1,4 @@
-import { FiliereEtude } from "./enums"
+import { FiliereEtude, TypeStage } from "./enums"
 import { AnneeEtude} from "./enums"
 import { StatutRapport } from "./enums"
 
@@ -20,7 +20,8 @@ export interface DepotRapportStage{
     evaluation:Evaluation | null,
     statut:StatutRapport,
     submissionDate:Date,
-    selectedRadio?:string | null // C'est une propriété optionnelle
+    selectedRadio?:string | null, // C'est une propriété optionnelle
+    typeStage:TypeStage
 }
 
 export interface Evaluation{
