@@ -140,7 +140,7 @@ export class RapportsStageComponent implements OnInit{
     this.closeModalAddEval();
     this.snackbar.open("L'évaluation du rapport est ajouté avec succès","Close",{duration:5000});
     this.listDepotsRapport=this.service.getRapports();
-   
+    this.filterDepots();
   }
 
   resetRadioCheck(depotRapport:DepotRapportStage){
@@ -175,6 +175,7 @@ export class RapportsStageComponent implements OnInit{
       this.listDepotsRapport=this.service.setStatutRapportById(depot.id,depot.selectedRadio); 
       this.idDepotToEditStatut=-1;
       this.fetchRappStageAddSelectedProp();
+      this.filterDepots();
     }
   }
 
