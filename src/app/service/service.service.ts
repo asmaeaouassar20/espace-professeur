@@ -23,7 +23,7 @@ export class ServiceService {
   etudiant2:Student={
     id:2,
     nom:'Aouassar2',
-    prenom:'Asmae2',
+    prenom:'Salama2',
     email:'Asmae2@gmail.com',
     filiere:FiliereEtude.INFO,
     anneeEtude:AnneeEtude.B,
@@ -32,7 +32,7 @@ export class ServiceService {
   etudiant3:Student={
     id:3,
     nom:'Aouassar3',
-    prenom:'Asmae3',
+    prenom:'Jawhara3',
     email:'Asmae3@gmail.com',
     filiere:FiliereEtude.SE,
     anneeEtude:AnneeEtude.C,
@@ -41,7 +41,7 @@ export class ServiceService {
   etudiant4:Student={
     id:4,
     nom:'Aouassar4',
-    prenom:'Asmae4',
+    prenom:'Faracha4',
     email:'Asmae4@gmail.com',
     filiere:FiliereEtude.INDUS,
     anneeEtude:AnneeEtude.A,
@@ -50,7 +50,7 @@ export class ServiceService {
   etudiant5:Student={
     id:5,
     nom:'Aoussar5',
-    prenom:'Asmae5',
+    prenom:'Israe5',
     email:'Asmae5@gmail.com',
     filiere:FiliereEtude.SE,
     anneeEtude:AnneeEtude.B,
@@ -59,7 +59,7 @@ export class ServiceService {
   etudiant6:Student={
     id:6,
     nom:'Aoussar6',
-    prenom:'Asmae6',
+    prenom:'Firdaous6',
     email:'Asmae6@gmail.com',
     filiere:FiliereEtude.INDUS,
     anneeEtude:AnneeEtude.A,
