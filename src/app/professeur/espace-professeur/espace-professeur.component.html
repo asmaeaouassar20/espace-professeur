@@ -2,7 +2,13 @@
 
   <section class="welcome-section mt-5">
     <div class="search-container d-flex justify-content-center align-items-center">
-      <input type="text"  placeholder="Rechercher un étudiant par son nom ou prénom ..." class="search-input">
+      <input
+       type="text"  
+       placeholder="Rechercher un étudiant par son nom ou prénom ..." 
+       class="search-input "
+       [(ngModel)]="searchStudent"
+       (input)="filtrerEtudiants()"
+       >
       <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
   </section>
@@ -11,38 +17,10 @@
 
 
   <div class="mt-5 d-flex justify-content-center align-items-center">
-    <!-- @if (listEtudiantsEncadre.length!=0) {
-      <table class="table">
-        <thead>
-          <tr >
-            <td class="p-3">id</td>
-            <td  class="p-3" >Nom</td>
-            <td  class="p-3" >Prenom</td>
-            <td  class="p-3" >Email</td>
-            <td  class="p-3" >Filière</td>
-            <td  class="p-3" >Année d'Etude</td>
-          </tr>
-        </thead>
-        <tbody>
-          @for (student of listEtudiantsEncadre; track $index) {
-            <tr>
-              <td  class="p-4 " >{{student.id}}</td>
-              <td  class="p-4" >{{student.prenom}}</td>
-              <td  class="p-4" >{{student.nom}}</td>
-              <td  class="p-4" >{{student.email}}</td>
-              <td  class="p-4" >{{student.filiere}}</td>
-              <td  class="p-4" >{{student.anneeEtude}}</td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    }@else {
-      <p>No Student Added Yet</p>
-    } -->
 
-  @if(listEtudiantsEncadre.length!=0){
+  @if(filtreEtudiants.length!=0){
     <div class="row">
-      @for (student of listEtudiantsEncadre; track $index) {
+      @for (student of filtreEtudiants; track $index) {
         <div class="col-lg-2   photo-container d-flex justify-content-center m-lg-5 py-4">
           <img [src]="student.imageUrl" class="rounded-circle" loading="lazy" >
           <div class="card-overlay">
