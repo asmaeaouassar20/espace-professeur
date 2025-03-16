@@ -17,22 +17,24 @@ export class EspaceProfesseurComponent {
 
   searchStudent : string ='';
 
-  filtreEtudiants:any[]=[]; //1
+
+  filtreEtudiants:any[]=[];
+
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  //********************************** 
   listEtudiantsEncadre:Student[]=[];
   constructor(private service:ServiceService){
     this.listEtudiantsEncadre=this.service.getStudents();
-    this.filtreEtudiants=[...this.listEtudiantsEncadre]; //2
+
+    this.filtreEtudiants=[...this.listEtudiantsEncadre];
   }
 
 
 
-// 3 
+
   filtrerEtudiants(){
     this.filtreEtudiants=this.listEtudiantsEncadre.filter(
       etudiant=> (etudiant.prenom+' '+etudiant.nom).toLowerCase().includes(this.searchStudent.toLowerCase())

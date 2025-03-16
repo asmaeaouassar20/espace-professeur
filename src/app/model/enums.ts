@@ -18,7 +18,8 @@ export enum StatutRapport{
 export enum TypeStage{
     INITIATION='Init',
     PFA='PFA',
-    PFE='PFE'
+    PFE='PFE',
+    ALL='All'
 }
 
 

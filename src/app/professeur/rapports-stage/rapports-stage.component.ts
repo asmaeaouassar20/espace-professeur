@@ -28,8 +28,7 @@ export class RapportsStageComponent implements OnInit{
   // Convertir l'énumération en tableau
   typesStage=Object.values(TypeStage); 
 
-  // Variable pour stocker la valeur sélectionnée
-  typeStageSelectionne:TypeStage | undefined;
+ 
 
   listDepotsRapport:DepotRapportStage[]=[];
 
@@ -45,8 +44,7 @@ export class RapportsStageComponent implements OnInit{
   })
 
   // Pour éditer le statut d'un rapport
-  idDepotToEditStatut:number=-1;  
- 
+  idDepotToEditStatut:number=-1;   
 
   evaluationDepotSelectionne!:Evaluation | null | undefined;
   idDepotRapStageToEvaluate:number=-1;
@@ -54,9 +52,18 @@ export class RapportsStageComponent implements OnInit{
   service=inject(ServiceService);
   snackbar=inject(MatSnackBar);
 
+
+  // Pour le filtre selon la recherche et le type de stage sélectionné
+  searchText:string='';
+  selectedTypeStage:TypeStage | undefined;
+  filteredDepotsRapport:any[]=[];
+
+
   ngOnInit(){
     this.listDepotsRapport=this.service.getRapports();
-   this.fetchRappStageAddSelectedProp();
+    this.fetchRappStageAddSelectedProp();
+
+    this.filteredDepotsRapport=[...this.listDepotsRapport];
   }
 
 
@@ -171,9 +178,36 @@ export class RapportsStageComponent implements OnInit{
     }
   }
 
+ 
+
   selectTypeStage(typeStage:TypeStage){
-    this.typeStageSelectionne=typeStage;
-    console.log(this.typeStageSelectionne);
+      this.selectedTypeStage=typeStage;
+      this.filterDepots();  
+  }
+  onSearcheChange(event:any){
+    this.searchText=event.target.value.trim();  // pour enlever les espace inutiles
+    this.filterDepots();
+  }
+  filterDepots(){
+    // Sélectionner tous les stages
+    if(this.selectedTypeStage===TypeStage.ALL){
+      this.filteredDepotsRapport=[...this.listDepotsRapport];
+      return;
+    }
+
+    // Si le input de recherche est vide, on réaffiche tous les étudiants
+    if(!this.searchText && this.selectedTypeStage==undefined){
+      this.filteredDepotsRapport=[...this.listDepotsRapport];
+      return
+    }
+
+    this.filteredDepotsRapport=this.listDepotsRapport.filter(
+      depot=>{
+        const isMatchTypeStage=this.selectedTypeStage===undefined? true: this.selectedTypeStage==depot.typeStage;
+        const isMatchTitre=depot.titre.toLowerCase().includes(this.searchText.toLowerCase());
+        return (isMatchTitre && isMatchTypeStage);
+      }
+    )
   }
   
 
